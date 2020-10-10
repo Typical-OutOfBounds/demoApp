@@ -22,11 +22,23 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         tipControl.selectedSegmentIndex = defaults.integer(forKey: "tipControl")
+        
+        if let value = UserDefaults.standard.value(forKey: "tipControl"){
+                    let selectedIndex = value as! Int
+                    tipControl.selectedSegmentIndex = selectedIndex
+                }
+        
+        // Keyboard automatically shows
+        billAmountTextField.becomeFirstResponder()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tipControl.selectedSegmentIndex = defaults.integer(forKey: "tipControl")
     }
     
     // Set default tip
-    @IBAction func setTipDefault(_ sender: Any){
-        defaults.set(tipControl.selectedSegmentIndex, forKey: "tipcontrol")
+    @IBAction func setTipDefault(_ sender: UISegmentedControl){
+        defaults.set(sender.selectedSegmentIndex, forKey: "tipControl")
         defaults.synchronize()
     }
 
