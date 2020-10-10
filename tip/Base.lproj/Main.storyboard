@@ -134,14 +134,40 @@
                     <view key="view" contentMode="scaleToFill" id="AVI-4f-bI4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Theme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jds-JM-9Jo">
+                                <rect key="frame" x="57" y="145" width="53" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4lA-kR-9C1">
+                                <rect key="frame" x="262" y="140" width="101" height="32"/>
+                                <segments>
+                                    <segment title="Light"/>
+                                    <segment title="Dark"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="iAo-lb-4dc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="iAo-lb-4dc" firstAttribute="trailing" secondItem="4lA-kR-9C1" secondAttribute="trailing" constant="51" id="HDP-cX-B6P"/>
+                            <constraint firstItem="jds-JM-9Jo" firstAttribute="top" secondItem="iAo-lb-4dc" secondAttribute="top" constant="57" id="Ha0-wU-aKF"/>
+                            <constraint firstItem="jds-JM-9Jo" firstAttribute="leading" secondItem="iAo-lb-4dc" secondAttribute="leading" constant="57" id="K9m-9c-geb"/>
+                            <constraint firstItem="jds-JM-9Jo" firstAttribute="centerY" secondItem="4lA-kR-9C1" secondAttribute="centerY" id="fUV-B5-0c4"/>
+                            <constraint firstItem="4lA-kR-9C1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="jds-JM-9Jo" secondAttribute="trailing" constant="8" symbolic="YES" id="kWU-gS-dz2"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="FhT-fY-Lyc"/>
+                    <connections>
+                        <outlet property="themeControl" destination="4lA-kR-9C1" id="pA7-sE-M1H"/>
+                        <outlet property="themeLabel" destination="jds-JM-9Jo" id="VAK-CE-o9I"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="63g-5o-IK6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1890" y="119"/>
+            <point key="canvasLocation" x="1889.8550724637682" y="118.52678571428571"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OSV-be-6fO">
