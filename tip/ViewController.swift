@@ -14,14 +14,26 @@ class ViewController: UIViewController {
     @IBOutlet weak var tipPercentageLabel: UILabel!
     @IBOutlet weak var billAmountTextField: UITextField!
     @IBOutlet weak var tipControl: UISegmentedControl!
+    
+    let defaults = UserDefaults.standard
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        tipControl.selectedSegmentIndex = defaults.integer(forKey: "tipControl")
+    }
+    
+    // Set default tip
+    @IBAction func setTipDefault(_ sender: Any){
+        defaults.set(tipControl.selectedSegmentIndex, forKey: "tipcontrol")
+        defaults.synchronize()
     }
 
     @IBAction func onTap(_ sender: Any) {
         view.endEditing(true)
     }
+    
     @IBAction func calculateTip(_ sender: Any) {
         
         // Get the bill amount
@@ -38,6 +50,10 @@ class ViewController: UIViewController {
         // Update the tip and total labels
         tipPercentageLabel.text = String(format: curSymbol + "%.2f", tip)
         totalLabel.text = String(format: curSymbol + "%.2f", total)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // let settingViewController = segue.destination as! SettingsViewController
     }
     
 }

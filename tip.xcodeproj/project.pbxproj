@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A7AC0AF4253161CC006487BD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AC0AF3253161CC006487BD /* SettingsViewController.swift */; };
 		A7F09DA024F0BE4F001BF04F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F09D9F24F0BE4F001BF04F /* AppDelegate.swift */; };
 		A7F09DA224F0BE4F001BF04F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F09DA124F0BE4F001BF04F /* SceneDelegate.swift */; };
 		A7F09DA424F0BE4F001BF04F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F09DA324F0BE4F001BF04F /* ViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A7AC0AF3253161CC006487BD /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A7F09D9C24F0BE4F001BF04F /* tip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7F09D9F24F0BE4F001BF04F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7F09DA124F0BE4F001BF04F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				A7F09DA824F0BE51001BF04F /* Assets.xcassets */,
 				A7F09DAA24F0BE51001BF04F /* LaunchScreen.storyboard */,
 				A7F09DAD24F0BE51001BF04F /* Info.plist */,
+				A7AC0AF3253161CC006487BD /* SettingsViewController.swift */,
 			);
 			path = tip;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				A7F09DA424F0BE4F001BF04F /* ViewController.swift in Sources */,
 				A7F09DA024F0BE4F001BF04F /* AppDelegate.swift in Sources */,
 				A7F09DA224F0BE4F001BF04F /* SceneDelegate.swift in Sources */,
+				A7AC0AF4253161CC006487BD /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
