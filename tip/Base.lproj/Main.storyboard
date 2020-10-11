@@ -50,7 +50,6 @@
                                 </segments>
                                 <connections>
                                     <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="valueChanged" id="hY1-yi-4Fz"/>
-                                    <action selector="setTipDefault:" destination="BYZ-38-t0r" eventType="valueChanged" id="L1q-z8-D3W"/>
                                 </connections>
                             </segmentedControl>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZPg-tn-sSO">
@@ -158,7 +157,7 @@
                                     <segment title="20%"/>
                                 </segments>
                                 <connections>
-                                    <action selector="setDefaultTip:" destination="fnA-74-VjH" eventType="valueChanged" id="5MN-Vh-aef"/>
+                                    <action selector="setDefaultTip:" destination="fnA-74-VjH" eventType="valueChanged" id="2DS-D8-Wad"/>
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Set Default Tip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxL-Pq-80M">

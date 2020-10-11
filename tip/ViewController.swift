@@ -16,23 +16,30 @@ class ViewController: UIViewController {
     @IBOutlet weak var tipControl: UISegmentedControl!
     
     let defaults = UserDefaults.standard
+    var checkTip = 0
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Hello")
         tipControl.selectedSegmentIndex = defaults.integer(forKey: "tipControl")
+        checkTip = defaults.integer(forKey: "tipControl")
         
         // Keyboard automatically shows
         billAmountTextField.becomeFirstResponder()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        tipControl.selectedSegmentIndex = defaults.integer(forKey: "tipControl")
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        // Changes tip in calculator if dault was changed
+        if checkTip != defaults.integer(forKey: "tipControl"){
+            checkTip = defaults.integer(forKey: "tipControl")
+            tipControl.selectedSegmentIndex = checkTip
+        }
     }
     
-    
-
     @IBAction func onTap(_ sender: Any) {
         view.endEditing(true)
     }
