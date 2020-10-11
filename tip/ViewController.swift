@@ -87,5 +87,22 @@ class ViewController: UIViewController {
         totalLabel.text = String(format: curSymbol + "%.2f", total)
     }
     
+    @IBAction func currentCalc(_ sender: Any) {
+        
+        // Get the bill amount
+        let bill = Double(billAmountTextField.text!) ?? 0
+        let tipPercentages = [0.15, 0.18, 0.2]
+        
+        // Calculate the tip and total
+        let tip = (bill * tipPercentages[tipControl.selectedSegmentIndex])
+        let total = (bill + tip)
+        
+        let locale = Locale.current
+        let curSymbol = locale.currencySymbol!
+        
+        // Update the tip and total labels
+        tipPercentageLabel.text = String(format: curSymbol + "%.2f", tip)
+        totalLabel.text = String(format: curSymbol + "%.2f", total)
+    }
 }
 
