@@ -31,11 +31,7 @@ class ViewController: UIViewController {
         tipControl.selectedSegmentIndex = defaults.integer(forKey: "tipControl")
     }
     
-    // Set default tip
-    @IBAction func setTipDefault(_ sender: Any){
-        defaults.set(tipControl.selectedSegmentIndex, forKey: "tipControl")
-        defaults.synchronize()
-    }
+    
 
     @IBAction func onTap(_ sender: Any) {
         view.endEditing(true)
@@ -57,10 +53,6 @@ class ViewController: UIViewController {
         // Update the tip and total labels
         tipPercentageLabel.text = String(format: curSymbol + "%.2f", tip)
         totalLabel.text = String(format: curSymbol + "%.2f", total)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // let settingViewController = segue.destination as! SettingsViewController
     }
     
 }

@@ -50,6 +50,7 @@
                                 </segments>
                                 <connections>
                                     <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="valueChanged" id="hY1-yi-4Fz"/>
+                                    <action selector="setTipDefault:" destination="BYZ-38-t0r" eventType="valueChanged" id="L1q-z8-D3W"/>
                                 </connections>
                             </segmentedControl>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZPg-tn-sSO">
@@ -148,6 +149,25 @@
                                     <segment title="Dark"/>
                                 </segments>
                             </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="defaultTip" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="URL-im-i1I">
+                                <rect key="frame" x="57" y="283" width="306" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="15%"/>
+                                    <segment title="18%"/>
+                                    <segment title="20%"/>
+                                </segments>
+                                <connections>
+                                    <action selector="setDefaultTip:" destination="fnA-74-VjH" eventType="valueChanged" id="5MN-Vh-aef"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Set Default Tip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxL-Pq-80M">
+                                <rect key="frame" x="57" y="228" width="113" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iAo-lb-4dc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -161,6 +181,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="FhT-fY-Lyc"/>
                     <connections>
+                        <outlet property="DefaultTipControl" destination="URL-im-i1I" id="taK-u2-ef8"/>
                         <outlet property="themeControl" destination="4lA-kR-9C1" id="pA7-sE-M1H"/>
                         <outlet property="themeLabel" destination="jds-JM-9Jo" id="VAK-CE-o9I"/>
                     </connections>

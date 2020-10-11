@@ -14,33 +14,44 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet weak var themeLabel: UILabel!
     @IBOutlet weak var themeControl: UISegmentedControl!
+    @IBOutlet weak var DefaultTipControl: UISegmentedControl!
     
     var isDark = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("loaded")
-        if (defaults.integer(forKey: "theme") == 0){
-            view.backgroundColor = .white
-            themeLabel.textColor = .black
-        }
-        else{
-            view.backgroundColor = .black
-            themeLabel.textColor = .white
-        }
+        DefaultTipControl.selectedSegmentIndex = defaults.integer(forKey: "tipControl")
+        
+        
+//        if (defaults.integer(forKey: "theme") == 0){
+//            view.backgroundColor = .white
+//            themeLabel.textColor = .black
+//        }
+//        else{
+//            view.backgroundColor = .black
+//            themeLabel.textColor = .white
+//        }
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if (defaults.integer(forKey: "theme") == 0){
-            view.backgroundColor = .white
-            themeLabel.textColor = .black
-        }
-        else{
-            view.backgroundColor = .black
-            themeLabel.textColor = .white
-        }
+//        if (defaults.integer(forKey: "theme") == 0){
+//            view.backgroundColor = .white
+//            themeLabel.textColor = .black
+//        }
+//        else{
+//            view.backgroundColor = .black
+//            themeLabel.textColor = .white
+//        }
     }
+    
+    // Set Default Tip
+    @IBAction func setDefaultTip(_ sender: Any) {
+        defaults.set(DefaultTipControl.selectedSegmentIndex, forKey: "tipControl")
+        defaults.synchronize()
+    }
+    
     
     @IBAction func setThemeDefault(_ sender: UISegmentedControl){
         isDark = (sender.selectedSegmentIndex == 1)
