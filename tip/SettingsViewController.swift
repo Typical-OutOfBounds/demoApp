@@ -13,37 +13,21 @@ class SettingsViewController: UIViewController {
     let defaults = UserDefaults.standard
     
     @IBOutlet weak var themeLabel: UILabel!
+    @IBOutlet weak var setDefaultLabel: UILabel!
     @IBOutlet weak var themeControl: UISegmentedControl!
     @IBOutlet weak var DefaultTipControl: UISegmentedControl!
-    
-    var isDark = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("loaded")
         DefaultTipControl.selectedSegmentIndex = defaults.integer(forKey: "tipControl")
+        themeControl.selectedSegmentIndex = defaults.integer(forKey: "theme")
         
-        
-//        if (defaults.integer(forKey: "theme") == 0){
-//            view.backgroundColor = .white
-//            themeLabel.textColor = .black
-//        }
-//        else{
-//            view.backgroundColor = .black
-//            themeLabel.textColor = .white
-//        }
-        
+        updateTheme()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        if (defaults.integer(forKey: "theme") == 0){
-//            view.backgroundColor = .white
-//            themeLabel.textColor = .black
-//        }
-//        else{
-//            view.backgroundColor = .black
-//            themeLabel.textColor = .white
-//        }
+        updateTheme()
     }
     
     // Set Default Tip
@@ -52,28 +36,26 @@ class SettingsViewController: UIViewController {
         defaults.synchronize()
     }
     
-    
-    @IBAction func setThemeDefault(_ sender: UISegmentedControl){
-        isDark = (sender.selectedSegmentIndex == 1)
-        updateTheme()
+    // Changes Theme
+    @IBAction func setTheme(_ sender: Any) {
         
         defaults.set(themeControl.selectedSegmentIndex, forKey: "theme")
         print(defaults.integer(forKey: "theme"))
-        
-        if (defaults.integer(forKey: "theme") == 0){
-            view.backgroundColor = .white
-            themeLabel.textColor = .black
-        }
-        else{
-            view.backgroundColor = .black
-            themeLabel.textColor = .white
-        }
+        updateTheme()
         
     }
     
     func updateTheme(){
-        view.backgroundColor = isDark ? .black : .white
-        //self.nameTextField.updateStyle(isDark: self.isDark)
+        if (defaults.integer(forKey: "theme") == 0){
+            view.backgroundColor = .white
+            themeLabel.textColor = .black
+            setDefaultLabel.textColor = .black
+        }
+        else{
+            view.backgroundColor = .darkGray
+            themeLabel.textColor = .white
+            setDefaultLabel.textColor = .white
+        }
     }
 
     /*

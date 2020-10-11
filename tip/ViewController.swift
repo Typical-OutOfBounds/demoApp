@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var totalLabel2: UILabel!
+    @IBOutlet weak var tipPercentLabel2: UILabel!
+    @IBOutlet weak var billAmountLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var tipPercentageLabel: UILabel!
     @IBOutlet weak var billAmountTextField: UITextField!
@@ -38,6 +41,28 @@ class ViewController: UIViewController {
             checkTip = defaults.integer(forKey: "tipControl")
             tipControl.selectedSegmentIndex = checkTip
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if (defaults.integer(forKey: "theme") == 0){
+            view.backgroundColor = .white
+            totalLabel.textColor = .black
+            tipPercentageLabel.textColor = .black
+            billAmountLabel.textColor = .black
+            totalLabel2.textColor = .black
+            tipPercentLabel2.textColor = .black
+            billAmountTextField.textColor = .black
+        }
+        else{
+            view.backgroundColor = .darkGray
+            totalLabel.textColor = .white
+            tipPercentageLabel.textColor = .white
+            billAmountLabel.textColor = .white
+            totalLabel2.textColor = .white
+            tipPercentLabel2.textColor = .white
+            billAmountTextField.textColor = .white
+        }
+        
     }
     
     @IBAction func onTap(_ sender: Any) {

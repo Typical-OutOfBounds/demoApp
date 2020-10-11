@@ -112,10 +112,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="billAmountLabel" destination="LFJ-ae-UlZ" id="9X5-bl-0QQ"/>
                         <outlet property="billAmountTextField" destination="ZPg-tn-sSO" id="DCA-JF-flj"/>
                         <outlet property="tipControl" destination="ERf-Y7-sFX" id="WIO-cC-aE5"/>
+                        <outlet property="tipPercentLabel2" destination="ku4-Nb-ngp" id="2dh-DN-z6D"/>
                         <outlet property="tipPercentageLabel" destination="vwd-kh-9Dd" id="9iT-Rf-hdk"/>
                         <outlet property="totalLabel" destination="rdM-aa-7yc" id="CGx-tp-xwd"/>
+                        <outlet property="totalLabel2" destination="KcV-6r-sga" id="0ET-gp-TOQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -147,6 +150,9 @@
                                     <segment title="Light"/>
                                     <segment title="Dark"/>
                                 </segments>
+                                <connections>
+                                    <action selector="setTheme:" destination="fnA-74-VjH" eventType="valueChanged" id="DAz-hK-2TD"/>
+                                </connections>
                             </segmentedControl>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="defaultTip" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="URL-im-i1I">
                                 <rect key="frame" x="57" y="283" width="306" height="32"/>
@@ -169,7 +175,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iAo-lb-4dc"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="iAo-lb-4dc" firstAttribute="trailing" secondItem="4lA-kR-9C1" secondAttribute="trailing" constant="51" id="HDP-cX-B6P"/>
                             <constraint firstItem="jds-JM-9Jo" firstAttribute="top" secondItem="iAo-lb-4dc" secondAttribute="top" constant="57" id="Ha0-wU-aKF"/>
@@ -181,6 +187,7 @@
                     <navigationItem key="navigationItem" id="FhT-fY-Lyc"/>
                     <connections>
                         <outlet property="DefaultTipControl" destination="URL-im-i1I" id="taK-u2-ef8"/>
+                        <outlet property="setDefaultLabel" destination="bxL-Pq-80M" id="jNF-Ic-Bi3"/>
                         <outlet property="themeControl" destination="4lA-kR-9C1" id="pA7-sE-M1H"/>
                         <outlet property="themeLabel" destination="jds-JM-9Jo" id="VAK-CE-o9I"/>
                     </connections>
